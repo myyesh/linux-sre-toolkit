@@ -1,2 +1,7 @@
 logs/
 testlogs/
+*.log
+*.tar.gz
+restore_test/
+configs/secret.key
+.DS_Store
