@@ -1,0 +1,53 @@
+Environment: 
+===== SYSTEM HEALTH REPORT =====
+Run Time: Sat May  9 11:15:51 CDT 2026
+
+Disk Usage:
+Filesystem        Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s1s1   228Gi    12Gi    38Gi    24%    455k  402M    0%   /
+devfs            200Ki   200Ki     0Bi   100%     692     0  100%   /dev
+/dev/disk3s6     228Gi   3.0Gi    38Gi     8%       3  402M    0%   /System/Volumes/VM
+/dev/disk3s2     228Gi   8.2Gi    38Gi    18%    1.4k  402M    0%   /System/Volumes/Preboot
+/dev/disk3s4     228Gi   4.3Mi    38Gi     1%      70  402M    0%   /System/Volumes/Update
+/dev/disk1s2     500Mi   6.0Mi   482Mi     2%       3  4.9M    0%   /System/Volumes/xarts
+/dev/disk1s1     500Mi   5.7Mi   482Mi     2%      31  4.9M    0%   /System/Volumes/iSCPreboot
+/dev/disk1s3     500Mi   1.5Mi   482Mi     1%      43  4.9M    0%   /System/Volumes/Hardware
+/dev/disk3s5     228Gi   166Gi    38Gi    82%    1.2M  402M    0%   /System/Volumes/Data
+map auto_home      0Bi     0Bi     0Bi   100%       0     0     -   /System/Volumes/Data/home
+
+Memory Usage:
+Mach Virtual Memory Statistics: (page size of 16384 bytes)
+Pages free:                                3882.
+Pages active:                            105845.
+Pages inactive:                           96999.
+Pages speculative:                         8053.
+Pages throttled:                              0.
+Pages wired down:                         82712.
+Pages purgeable:                              2.
+"Translation faults":                 945581041.
+Pages copy-on-write:                   16778694.
+Pages zero filled:                    245235817.
+Pages reactivated:                    183804681.
+Pages purged:                          17250537.
+File-backed pages:                        90210.
+Anonymous pages:                         120687.
+Pages stored in compressor:              683726.
+Pages occupied by compressor:            190952.
+Decompressions:                       151861596.
+Compressions:                         184326166.
+Pageins:                               34270879.
+Pageouts:                                838493.
+Swapins:                                 534385.
+Swapouts:                                815169.
+
+Top Processes:
+USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+yeshwanthmadineni 60055  16.1  2.5 1890835968 210224   ??  S     9:26AM  18:01.73 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/147.0.7727.139/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --metrics-client-id=3c29e9e4-f2ab-40ea-ba66-3b70a0f20fcd --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=2039 --time-ticks-at-unix-epoch=-1778009830873313 --launch-time-ticks=242833745495 --shared-files --metrics-shmem-handle=1752395122,r,13269189768621796885,6336369361675293630,2097152 --field-trial-handle=1718379636,r,11611006414266516542,5808893213910984478,262144 --variations-seed-version=20260507-090102.283000-production --pseudonymization-salt-handle=1935764596,r,12140398887829118796,12604105480629909229,4 --trace-process-track-uuid=3190710896940201605 --seatbelt-client=665
+yeshwanthmadineni 31407   6.9  0.9 436197120  77216   ??  S    Tue01PM  31:59.40 /Users/yeshwanthmadineni/Applications/iTerm.app/Contents/MacOS/iTerm2
+yeshwanthmadineni   882   2.9  0.2 435394640  15424   ??  S    30Apr26   2:22.71 /System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent
+yeshwanthmadineni 46669   2.1  0.4 441174832  37312   ??  S    Thu11AM  29:29.39 /Applications/Adobe Acrobat DC/Adobe Acrobat.app/Contents/MacOS/AdobeAcrobat
+yeshwanthmadineni  6302   1.8  2.1 438314048 177104   ??  S    Sun12PM  91:45.00 /Applications/WhatsApp.app/Contents/MacOS/WhatsApp
+yeshwanthmadineni 52395   1.5  0.9 486698608  73728   ??  S    Thu09PM  37:40.73 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/147.0.7727.139/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper --type=gpu-process --metrics-client-id=3c29e9e4-f2ab-40ea-ba66-3b70a0f20fcd --gpu-preferences=SAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAAAwAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --metrics-shmem-handle=1752395122,r,8675343022513590736,5589085092145070025,262144 --field-trial-handle=1718379636,r,11611006414266516542,5808893213910984478,262144 --variations-seed-version=20260507-090102.283000-production --pseudonymization-salt-handle=1935764596,r,12140398887829118796,12604105480629909229,4 --trace-process-track-uuid=3190708988185955192 --seatbelt-client=22
+yeshwanthmadineni 61158   1.4  1.5 1890595600 130000   ??  S    10:35AM   0:35.54 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/147.0.7727.139/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --metrics-client-id=3c29e9e4-f2ab-40ea-ba66-3b70a0f20fcd --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=2353 --time-ticks-at-unix-epoch=-1778009830873313 --launch-time-ticks=247015647767 --shared-files --metrics-shmem-handle=1752395122,r,1075055610782984124,4266656997317973338,2097152 --field-trial-handle=1718379636,r,11611006414266516542,5808893213910984478,262144 --variations-seed-version=20260507-090102.283000-production --pseudonymization-salt-handle=1935764596,r,12140398887829118796,12604105480629909229,4 --trace-process-track-uuid=3190711191171342191 --seatbelt-client=234
+yeshwanthmadineni 60072   1.4  1.1 1890582960  90928   ??  S     9:26AM   1:37.17 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/147.0.7727.139/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --metrics-client-id=3c29e9e4-f2ab-40ea-ba66-3b70a0f20fcd --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=2050 --time-ticks-at-unix-epoch=-1778009830873313 --launch-time-ticks=242851569470 --shared-files --metrics-shmem-handle=1752395122,r,13625409658069787093,1401573762667649645,2097152 --field-trial-handle=1718379636,r,11611006414266516542,5808893213910984478,262144 --variations-seed-version=20260507-090102.283000-production --pseudonymization-salt-handle=1935764596,r,12140398887829118796,12604105480629909229,4 --trace-process-track-uuid=3190710907247661944 --seatbelt-client=524
+yeshwanthmadineni 61149   1.4  1.6 1890588208 131056   ??  S    10:35AM   0:36.27 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/147.0.7727.139/Helpers/Google Chrome Helper (Renderer).app/Contents/MacOS/Google Chrome Helper (Renderer) --type=renderer --metrics-client-id=3c29e9e4-f2ab-40ea-ba66-3b70a0f20fcd --origin-trial-disabled-features=CanvasTextNg|WebAssemblyCustomDescriptors --lang=en-US --num-raster-threads=4 --enable-zero-copy --enable-gpu-memory-buffer-compositor-resources --enable-main-frame-before-activation --renderer-client-id=2347 --time-ticks-at-unix-epoch=-1778009830873313 --launch-time-ticks=247011755065 --shared-files --metrics-shmem-handle=1752395122,r,2936272973865569657,9277351448454656809,2097152 --field-trial-handle=1718379636,r,11611006414266516542,5808893213910984478,262144 --variations-seed-version=20260507-090102.283000-production --pseudonymization-salt-handle=1935764596,r,12140398887829118796,12604105480629909229,4 --trace-process-track-uuid=3190711185549091097 --seatbelt-client=379

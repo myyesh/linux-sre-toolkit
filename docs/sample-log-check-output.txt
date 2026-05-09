@@ -1,0 +1,21 @@
+===== MULTI LOG CHECK =====
+Run Time: Sat May  9 11:15:11 CDT 2026
+
+Checking: logs/app.log
+Errors: 5
+Warnings: 3
+
+Checking: logs/auth.log
+Errors: 1
+Warnings: 0
+
+Checking: logs/payment.log
+Errors: 1
+Warnings: 1
+
+===== FINAL SUMMARY =====
+Total Errors Across Logs: 7
+Total Warnings Across Logs: 4
+
+===== OVERALL HEALTH =====
+CRITICAL: Multiple errors detected across logs.
