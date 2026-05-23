@@ -1,4 +1,4 @@
-# Linux SRE Toolkit
+# SRE Ops Platform
 
 A hands-on Linux and Bash scripting project focused on real-world DevOps and Site Reliability Engineering (SRE) operational workflows.
 
@@ -16,12 +16,14 @@ This toolkit simulates common operational engineering tasks such as:
 
 The project was built step-by-step using Linux terminal commands, Bash scripting, and Git workflows.
 
+This repository is an evolving DevOps/SRE portfolio project, starting with Linux operations and expanding into Nginx, Docker, CI/CD, Kubernetes, and cloud infrastructure.
+
 ---
 
 ## Project Structure
 
 ```text
-sre-lab/
+sre-ops-platform/
 ├── app/
 ├── configs/
 ├── logs/
