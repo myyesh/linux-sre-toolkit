@@ -6,7 +6,6 @@ A hands-on Linux and Bash scripting project focused on real-world DevOps and Sit
 
 This toolkit simulates common operational engineering tasks such as:
 
-- Log monitoring
 - System health inspection
 - Process management
 - Incident troubleshooting
