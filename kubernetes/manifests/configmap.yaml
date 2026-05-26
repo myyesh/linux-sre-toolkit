@@ -1,0 +1,10 @@
+apiVersion: v1
+
+kind: ConfigMap
+
+metadata:
+  name: sre-ops-site-config
+
+data:
+  APP_ENV: "production"
+  SITE_NAME: "SRE Ops Platform"

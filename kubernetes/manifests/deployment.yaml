@@ -23,6 +23,10 @@ spec:
 
           image: sre-ops-static-site:latest
 
+          envFrom:
+            - configMapRef:
+                name: sre-ops-site-config
+
           ports:
             - containerPort: 80
 
