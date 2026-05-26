@@ -39,5 +39,39 @@ fi
 echo "Nginx command found."
 
 echo ""
+
+echo ""
 echo "Deployment validation complete."
-echo "Ready to copy site files to Nginx web root on target server."
+
+echo ""
+echo "Copying site files to Nginx web root..."
+sudo cp -r "$SITE_SOURCE"/* "$NGINX_TARGET"/
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: Failed to copy site files."
+  exit 1
+fi
+
+echo "Site files copied successfully."
+
+echo ""
+echo "Testing Nginx configuration..."
+sudo nginx -t
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: Nginx configuration test failed."
+  exit 1
+fi
+
+echo "Nginx configuration is valid."
+
+echo ""
+echo "Reloading Nginx..."
+sudo systemctl reload nginx
+
+if [ $? -ne 0 ]; then
+  echo "ERROR: Failed to reload Nginx."
+  exit 1
+fi
+
+echo "Deployment completed successfully."
