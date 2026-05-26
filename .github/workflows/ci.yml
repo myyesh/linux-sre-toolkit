@@ -14,6 +14,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate shell script syntax
+        run: |
+          bash -n scripts/log_monitor.sh
+          bash -n scripts/check_all_logs.sh
+          bash -n scripts/system_health.sh
+          bash -n nginx-deployment/scripts/deploy_site.sh
+          bash -n nginx-deployment/scripts/validate_nginx.sh
+          bash -n nginx-deployment/scripts/check_site.sh
+
       - name: Validate shell scripts are executable
         run: |
           test -x scripts/log_monitor.sh
@@ -26,3 +35,9 @@ jobs:
       - name: Validate Docker build
         run: |
           docker build -t sre-ops-static-site .
+
+      - name: Run container and test site
+        run: |
+          docker run -d -p 8080:80 --name sre-ops-site sre-ops-static-site
+          sleep 3
+          curl -f http://localhost:8080
