@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  sre-ops-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: sre-ops-site
+
+    ports:
+      - "8080:80"
+
+    environment:
+      APP_ENV: production
+
+    restart: unless-stopped
