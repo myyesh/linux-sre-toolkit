@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: sre-ops-site-deployment
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: sre-ops-site
+
+  template:
+    metadata:
+      labels:
+        app: sre-ops-site
+
+    spec:
+      containers:
+        - name: sre-ops-site
+
+          image: sre-ops-static-site:latest
+
+          ports:
+            - containerPort: 80
