@@ -3,7 +3,6 @@
 APP_ENV=${APP_ENV:-development}
 
 echo "Environment: $APP_ENV"
-
 echo "===== NGINX STATIC SITE DEPLOYMENT ====="
 
 SITE_SOURCE="./nginx-deployment/site"
@@ -32,6 +31,14 @@ fi
 
 echo "index.html found."
 
+if [ "$APP_ENV" = "development" ]; then
+  echo ""
+  echo "Development mode detected."
+  echo "Dry run only. No files will be copied and Nginx will not be reloaded."
+  echo "Deployment validation completed successfully."
+  exit 0
+fi
+
 echo ""
 echo "Validating Nginx installation..."
 
@@ -41,11 +48,6 @@ if ! command -v nginx >/dev/null 2>&1; then
 fi
 
 echo "Nginx command found."
-
-echo ""
-
-echo ""
-echo "Deployment validation complete."
 
 echo ""
 echo "Copying site files to Nginx web root..."
