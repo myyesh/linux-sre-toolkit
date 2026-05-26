@@ -1,0 +1,28 @@
+name: SRE Ops Platform CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate shell scripts are executable
+        run: |
+          test -x scripts/log_monitor.sh
+          test -x scripts/check_all_logs.sh
+          test -x scripts/system_health.sh
+          test -x nginx-deployment/scripts/deploy_site.sh
+          test -x nginx-deployment/scripts/validate_nginx.sh
+          test -x nginx-deployment/scripts/check_site.sh
+
+      - name: Validate Docker build
+        run: |
+          docker build -t sre-ops-static-site .
