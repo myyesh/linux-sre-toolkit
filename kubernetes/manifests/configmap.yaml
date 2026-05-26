@@ -5,6 +5,8 @@ kind: ConfigMap
 metadata:
   name: sre-ops-site-config
 
+  namespace: sre-ops
+
 data:
   APP_ENV: "production"
   SITE_NAME: "SRE Ops Platform"

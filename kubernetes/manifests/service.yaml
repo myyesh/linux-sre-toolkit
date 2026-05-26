@@ -5,6 +5,8 @@ kind: Service
 metadata:
   name: sre-ops-site-service
 
+  namespace: sre-ops
+
 spec:
   type: NodePort
 

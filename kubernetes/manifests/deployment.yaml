@@ -5,6 +5,8 @@ kind: Deployment
 metadata:
   name: sre-ops-site-deployment
 
+  namespace: sre-ops
+
 spec:
   replicas: 2
 
