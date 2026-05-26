@@ -18,6 +18,14 @@ The project was built step-by-step using Linux terminal commands, Bash scripting
 
 This repository is an evolving DevOps/SRE portfolio project, starting with Linux operations and expanding into Nginx, Docker, CI/CD, Kubernetes, and cloud infrastructure.
 
+## Project Roadmap
+
+This repository is being built as an evolving DevOps/SRE portfolio project.
+
+Current and planned phases are documented here:
+
+[View Project Roadmap](docs/project-roadmap.md)
+
 ## Modules
 
 ### Linux Operations & Bash Scripting
