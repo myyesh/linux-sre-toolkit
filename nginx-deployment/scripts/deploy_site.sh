@@ -1,5 +1,9 @@
 #!/bin/bash
 
+APP_ENV=${APP_ENV:-development}
+
+echo "Environment: $APP_ENV"
+
 echo "===== NGINX STATIC SITE DEPLOYMENT ====="
 
 SITE_SOURCE="./nginx-deployment/site"
