@@ -18,18 +18,43 @@ The project was built step-by-step using Linux terminal commands, Bash scripting
 
 This repository is an evolving DevOps/SRE portfolio project, starting with Linux operations and expanding into Nginx, Docker, CI/CD, Kubernetes, and cloud infrastructure.
 
+## Modules
+
+### Linux Operations & Bash Scripting
+
+Includes:
+
+- system health monitoring
+- log analysis
+- cron automation
+- permissions management
+- backup and restore workflows
+
+### Nginx Static Site Deployment
+
+Includes:
+
+- static website deployment
+- Nginx validation checks
+- deployment automation scripts
+- service reload workflows
+- deployment documentation
+
 ---
 
 ## Project Structure
 
-```text
 sre-ops-platform/
 ├── app/
 ├── configs/
-├── logs/
+├── docs/
+├── nginx-deployment/
+│   ├── docs/
+│   ├── scripts/
+│   ├── site/
+│   └── README.md
 ├── scripts/
 │   ├── log_monitor.sh
 │   ├── check_all_logs.sh
 │   └── system_health.sh
-├── testlogs/
 └── README.md
