@@ -22,8 +22,8 @@ spec:
     spec:
       containers:
         - name: sre-ops-site
-
-          image: sre-ops-static-site:latest
+          image: sre-ops-platform-sre-ops-site:latest
+          imagePullPolicy: Never
 
           envFrom:
             - configMapRef:
