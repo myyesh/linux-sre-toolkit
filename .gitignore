@@ -5,3 +5,4 @@ testlogs/
 restore_test/
 configs/secret.key
 .DS_Store
+sre-ops-key.pem
