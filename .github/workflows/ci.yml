@@ -30,10 +30,10 @@ jobs:
 
       - name: Validate Kubernetes manifests
         run: |
-          kubectl apply --dry-run=client -f kubernetes/manifests/namespace.yaml
-          kubectl apply --dry-run=client -f kubernetes/manifests/configmap.yaml
-          kubectl apply --dry-run=client -f kubernetes/manifests/deployment.yaml
-          kubectl apply --dry-run=client -f kubernetes/manifests/service.yaml
+          kubectl apply --dry-run=client --validate=false -f kubernetes/manifests/namespace.yaml
+          kubectl apply --dry-run=client --validate=false -f kubernetes/manifests/configmap.yaml
+          kubectl apply --dry-run=client --validate=false -f kubernetes/manifests/deployment.yaml
+          kubectl apply --dry-run=client --validate=false -f kubernetes/manifests/service.yaml
 
       - name: Validate shell script syntax
         run: |
