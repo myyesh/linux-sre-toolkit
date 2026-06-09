@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
   pull_request:
 
 jobs:
@@ -14,6 +15,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Validate Terraform configuration
+        working-directory: terraform/aws-ec2
+        run: |
+          terraform init -backend=false
+          terraform fmt -check
+          terraform validate
+
       - name: Validate shell script syntax
         run: |
           bash -n scripts/log_monitor.sh
@@ -22,6 +33,9 @@ jobs:
           bash -n nginx-deployment/scripts/deploy_site.sh
           bash -n nginx-deployment/scripts/validate_nginx.sh
           bash -n nginx-deployment/scripts/check_site.sh
+          bash -n monitoring/site_health_check.sh
+          bash -n monitoring/docker_health_check.sh
+          bash -n monitoring/system_metrics.sh
 
       - name: Validate shell scripts are executable
         run: |
@@ -31,6 +45,9 @@ jobs:
           test -x nginx-deployment/scripts/deploy_site.sh
           test -x nginx-deployment/scripts/validate_nginx.sh
           test -x nginx-deployment/scripts/check_site.sh
+          test -x monitoring/site_health_check.sh
+          test -x monitoring/docker_health_check.sh
+          test -x monitoring/system_metrics.sh
 
       - name: Validate Docker build
         run: |
@@ -41,3 +58,9 @@ jobs:
           docker run -d -p 8080:80 --name sre-ops-site sre-ops-static-site
           sleep 3
           curl -f http://localhost:8080
+
+      - name: Run monitoring checks
+        run: |
+          ./monitoring/site_health_check.sh http://localhost:8080
+          ./monitoring/docker_health_check.sh
+          ./monitoring/system_metrics.sh
