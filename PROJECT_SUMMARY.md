@@ -75,6 +75,9 @@ The project evolved through multiple phases covering Linux administration, shell
 * Docker build validation
 * Container health testing
 * Monitoring script validation
+- Kubernetes manifest validation in GitHub Actions
+- YAML-based Kubernetes validation without requiring live cluster access
+- Monitoring checks executed in CI
 
 ### Monitoring
 
