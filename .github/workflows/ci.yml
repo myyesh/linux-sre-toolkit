@@ -25,6 +25,43 @@ jobs:
           terraform fmt -check
           terraform validate
 
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Validate Kubernetes manifest YAML
+        run: |
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+
+          files = [
+              "kubernetes/manifests/namespace.yaml",
+              "kubernetes/manifests/configmap.yaml",
+              "kubernetes/manifests/deployment.yaml",
+              "kubernetes/manifests/service.yaml",
+          ]
+
+          for file in files:
+              path = Path(file)
+              with path.open() as f:
+                  docs = list(yaml.safe_load_all(f))
+
+              if not docs or docs[0] is None:
+                  raise ValueError(f"{file} is empty or invalid")
+
+              for doc in docs:
+                  if "apiVersion" not in doc:
+                      raise ValueError(f"{file} missing apiVersion")
+                  if "kind" not in doc:
+                      raise ValueError(f"{file} missing kind")
+                  if "metadata" not in doc:
+                      raise ValueError(f"{file} missing metadata")
+
+              print(f"Validated {file}")
+
+          print("All Kubernetes manifests are valid YAML with required Kubernetes fields.")
+          PY
+
       - name: Validate shell script syntax
         run: |
           bash -n scripts/log_monitor.sh
