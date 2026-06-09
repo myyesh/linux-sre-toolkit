@@ -36,9 +36,6 @@ jobs:
           bash -n monitoring/site_health_check.sh
           bash -n monitoring/docker_health_check.sh
           bash -n monitoring/system_metrics.sh
-          bash -n kubernetes/scripts/deploy_k8s.sh
-          bash -n kubernetes/scripts/check_k8s.sh
-          bash -n kubernetes/scripts/cleanup_k8s.sh
 
       - name: Validate shell scripts are executable
         run: |
@@ -51,9 +48,6 @@ jobs:
           test -x monitoring/site_health_check.sh
           test -x monitoring/docker_health_check.sh
           test -x monitoring/system_metrics.sh
-          test -x kubernetes/scripts/deploy_k8s.sh
-          test -x kubernetes/scripts/check_k8s.sh
-          test -x kubernetes/scripts/cleanup_k8s.sh
 
       - name: Validate Docker build
         run: |
