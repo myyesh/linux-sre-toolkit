@@ -14,6 +14,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Validate Terraform configuration
+        working-directory: terraform/aws-ec2
+        run: |
+          terraform init -backend=false
+          terraform fmt -check
+          terraform validate
+
       - name: Validate shell script syntax
         run: |
           bash -n scripts/log_monitor.sh
