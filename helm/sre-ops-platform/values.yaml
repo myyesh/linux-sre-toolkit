@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: sre-ops-platform-sre-ops-site
+  tag: latest
+  pullPolicy: Never
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30080
+
+app:
+  environment: local
+  owner: Yeshwanth Madineni
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 64Mi
+  limits:
+    cpu: 500m
+    memory: 128Mi
