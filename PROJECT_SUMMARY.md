@@ -85,6 +85,14 @@ The project evolved through multiple phases covering Linux administration, shell
 * Docker health checks
 * System metrics collection
 
+### Observability
+
+- Built a local Prometheus and Grafana stack
+- Configured Prometheus scraping
+- Connected Grafana to Prometheus
+- Created dashboard panels
+- Added alerting concepts and example Prometheus alert rules
+
 ---
 
 ## Repository Structure

@@ -20,6 +20,8 @@ The project evolved through multiple phases covering:
 * Terraform
 * GitHub Actions CI/CD
 * Monitoring & Health Checks
+* Prometheus
+* Grafana
 
 The objective is to demonstrate practical operational engineering skills commonly used in production environments.
 
@@ -66,6 +68,14 @@ The objective is to demonstrate practical operational engineering skills commonl
 * Site Health Checks
 * Docker Health Checks
 * System Metrics Collection
+
+### Observability
+
+- Prometheus metrics collection
+- Grafana dashboards
+- Prometheus datasource configuration
+- Alerting concepts
+- Example Prometheus alert rule
 
 ---
 
