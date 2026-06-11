@@ -25,6 +25,51 @@ jobs:
           terraform fmt -check
           terraform validate
 
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Validate Kubernetes manifest YAML
+        run: |
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+
+          files = [
+              "kubernetes/manifests/namespace.yaml",
+              "kubernetes/manifests/configmap.yaml",
+              "kubernetes/manifests/deployment.yaml",
+              "kubernetes/manifests/service.yaml",
+          ]
+
+          for file in files:
+              path = Path(file)
+              with path.open() as f:
+                  docs = list(yaml.safe_load_all(f))
+
+              if not docs or docs[0] is None:
+                  raise ValueError(f"{file} is empty or invalid")
+
+              for doc in docs:
+                  if "apiVersion" not in doc:
+                      raise ValueError(f"{file} missing apiVersion")
+                  if "kind" not in doc:
+                      raise ValueError(f"{file} missing kind")
+                  if "metadata" not in doc:
+                      raise ValueError(f"{file} missing metadata")
+
+              print(f"Validated {file}")
+
+          print("All Kubernetes manifests are valid YAML with required Kubernetes fields.")
+          PY
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+
+      - name: Validate Helm chart
+        run: |
+          helm lint helm/sre-ops-platform
+          helm template sre-ops-platform helm/sre-ops-platform
+
       - name: Validate shell script syntax
         run: |
           bash -n scripts/log_monitor.sh
@@ -36,6 +81,9 @@ jobs:
           bash -n monitoring/site_health_check.sh
           bash -n monitoring/docker_health_check.sh
           bash -n monitoring/system_metrics.sh
+          bash -n kubernetes/scripts/deploy_k8s.sh
+          bash -n kubernetes/scripts/check_k8s.sh
+          bash -n kubernetes/scripts/cleanup_k8s.sh
 
       - name: Validate shell scripts are executable
         run: |
@@ -48,6 +96,9 @@ jobs:
           test -x monitoring/site_health_check.sh
           test -x monitoring/docker_health_check.sh
           test -x monitoring/system_metrics.sh
+          test -x kubernetes/scripts/deploy_k8s.sh
+          test -x kubernetes/scripts/check_k8s.sh
+          test -x kubernetes/scripts/cleanup_k8s.sh
 
       - name: Validate Docker build
         run: |

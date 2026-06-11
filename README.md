@@ -1,68 +1,214 @@
 # SRE Ops Platform
 
-A hands-on Linux and Bash scripting project focused on real-world DevOps and Site Reliability Engineering (SRE) operational workflows.
-
-## Project Overview
-
-This toolkit simulates common operational engineering tasks such as:
-
-- System health inspection
-- Process management
-- Incident troubleshooting
-- Cron automation
-- Linux permissions management
-- Backup and restore operations
-- Multi-log analysis
-
-The project was built step-by-step using Linux terminal commands, Bash scripting, and Git workflows.
-
-This repository is an evolving DevOps/SRE portfolio project, starting with Linux operations and expanding into Nginx, Docker, CI/CD, Kubernetes, and cloud infrastructure.
-
-## Project Roadmap
-
-This repository is being built as an evolving DevOps/SRE portfolio project.
-
-Current and planned phases are documented here:
-
-[View Project Roadmap](docs/project-roadmap.md)
-
-## Modules
-
-### Linux Operations & Bash Scripting
-
-Includes:
-
-- system health monitoring
-- log analysis
-- cron automation
-- permissions management
-- backup and restore workflows
-
-### Nginx Static Site Deployment
-
-Includes:
-
-- static website deployment
-- Nginx validation checks
-- deployment automation scripts
-- service reload workflows
-- deployment documentation
+A hands-on DevOps and Cloud Infrastructure Engineering project demonstrating Linux administration, automation, containerization, Kubernetes orchestration, Infrastructure as Code, monitoring, and CI/CD practices.
 
 ---
 
-## Project Structure
+## Project Overview
+
+SRE Ops Platform was built as an end-to-end portfolio project to simulate real-world Site Reliability Engineering (SRE), DevOps, and Cloud Infrastructure workflows.
+
+The project evolved through multiple phases covering:
+
+* Linux Administration
+* Bash Automation
+* Git Workflows
+* Nginx Deployment
+* Docker & Docker Compose
+* Kubernetes
+* AWS EC2
+* Terraform
+* GitHub Actions CI/CD
+* Monitoring & Health Checks
+* Prometheus
+* Grafana
+
+The objective is to demonstrate practical operational engineering skills commonly used in production environments.
+
+---
+
+## Technology Stack
+
+### Operating Systems
+
+* Linux
+* Ubuntu
+* Amazon Linux
+
+### Cloud
+
+* AWS EC2
+* AWS Security Groups
+
+### Infrastructure as Code
+
+* Terraform
+
+### Containers
+
+* Docker
+* Docker Compose
+
+### Container Orchestration
+
+* Kubernetes
+* Kind (Local Kubernetes)
+
+### CI/CD
+
+* GitHub Actions
+
+### Web Services
+
+* Nginx
+
+### Monitoring
+
+* Bash Monitoring Scripts
+* Site Health Checks
+* Docker Health Checks
+* System Metrics Collection
+
+### Observability
+
+- Prometheus metrics collection
+- Grafana dashboards
+- Prometheus datasource configuration
+- Alerting concepts
+- Example Prometheus alert rule
+
+---
+
+## Project Architecture
+
+Developer
+↓
+Git & GitHub
+↓
+GitHub Actions CI
+↓
+Terraform Validation
+↓
+Docker Build Validation
+↓
+Monitoring Validation
+↓
+Kubernetes Manifest Validation
+↓
+Deployment Automation
+
+---
+
+## Major Features
+
+### Linux Operations
+
+* Process monitoring
+* Service management
+* Cron automation
+* Permission management
+* Log analysis
+
+### Bash Automation
+
+* Log monitoring scripts
+* System health reporting
+* Deployment validation
+* Operational automation
+
+### Docker
+
+* Containerized static website
+* Docker Compose deployment
+* Container lifecycle management
+
+### Kubernetes
+
+* Namespace configuration
+* Deployments
+* Services
+* ConfigMaps
+* Readiness and liveness probes
+* Resource limits
+* Deployment automation scripts
+
+### Terraform
+
+* AWS provider configuration
+* EC2 provisioning
+* Security Group automation
+* User-data bootstrap automation
+
+### CI/CD
+
+* Terraform validation
+* Shell script validation
+* Docker build validation
+* Monitoring validation
+* Kubernetes manifest validation
+
+### Monitoring
+
+* Website health checks
+* Docker health checks
+* System metrics reporting
+
+---
+
+## Repository Structure
 
 sre-ops-platform/
-├── app/
-├── configs/
+
+├── .github/workflows/
+
 ├── docs/
+
+├── monitoring/
+
 ├── nginx-deployment/
-│   ├── docs/
-│   ├── scripts/
-│   ├── site/
-│   └── README.md
+
+├── kubernetes/
+
+├── terraform/
+
 ├── scripts/
-│   ├── log_monitor.sh
-│   ├── check_all_logs.sh
-│   └── system_health.sh
+
+├── PROJECT_SUMMARY.md
+
 └── README.md
+
+---
+
+## Project Roadmap
+
+See:
+
+docs/project-roadmap.md
+
+---
+
+## Learning Outcomes
+
+This project demonstrates experience with:
+
+* Linux Administration
+* Infrastructure as Code
+* Containerization
+* Kubernetes Fundamentals
+* CI/CD Automation
+* Monitoring and Observability
+* Cloud Infrastructure
+* Git Branching Strategies
+* DevOps Operational Workflows
+
+---
+
+## Future Enhancements
+
+* Helm
+* Prometheus
+* Grafana
+* ArgoCD
+* Advanced Kubernetes Automation
+* Cloud-Native Monitoring
+
