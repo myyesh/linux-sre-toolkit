@@ -53,6 +53,16 @@ The project evolved through multiple phases covering Linux administration, shell
 * Readiness and liveness probes
 * Resource limits
 
+### Helm
+
+- Created Helm chart for Kubernetes deployment
+- Added configurable values.yaml
+- Templated Deployment, Service, and ConfigMap resources
+- Validated Helm chart using helm lint
+- Rendered Kubernetes manifests using helm template
+- Installed and tested Helm release on local Kubernetes
+- Added Helm chart validation to GitHub Actions
+
 ### AWS
 
 * EC2 provisioning

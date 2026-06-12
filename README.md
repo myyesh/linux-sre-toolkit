@@ -53,6 +53,7 @@ The objective is to demonstrate practical operational engineering skills commonl
 
 * Kubernetes
 * Kind (Local Kubernetes)
+* Helm
 
 ### CI/CD
 
@@ -131,6 +132,13 @@ Deployment Automation
 * Readiness and liveness probes
 * Resource limits
 * Deployment automation scripts
+
+### Helm Packaging
+
+- Helm chart for Kubernetes deployment
+- Configurable replicas, image, service, and resources
+- Local Kubernetes installation testing
+- CI validation with helm lint and helm template
 
 ### Terraform
 
