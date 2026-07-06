@@ -25,6 +25,14 @@ jobs:
           terraform fmt -check
           terraform validate
 
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+
+      - name: Validate Helm chart
+        run: |
+          helm lint helm/sre-ops-platform
+          helm template sre-ops-platform helm/sre-ops-platform
+
       - name: Setup kubectl
         uses: azure/setup-kubectl@v4
 
