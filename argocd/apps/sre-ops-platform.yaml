@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sre-ops-platform
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/myyesh/sre-ops-platform.git
+    targetRevision: develop
+    path: helm/sre-ops-platform
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sre-ops
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
