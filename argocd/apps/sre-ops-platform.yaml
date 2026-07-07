@@ -9,7 +9,7 @@ spec:
 
   source:
     repoURL: https://github.com/myyesh/sre-ops-platform.git
-    targetRevision: develop
+    targetRevision: feature/argocd
     path: helm/sre-ops-platform
 
   destination:
