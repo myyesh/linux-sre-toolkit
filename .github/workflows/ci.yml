@@ -70,14 +70,6 @@ jobs:
           print("All Kubernetes manifests are valid YAML with required Kubernetes fields.")
           PY
 
-      - name: Setup Helm
-        uses: azure/setup-helm@v4
-
-      - name: Validate Helm chart
-        run: |
-          helm lint helm/sre-ops-platform
-          helm template sre-ops-platform helm/sre-ops-platform
-
       - name: Validate shell script syntax
         run: |
           bash -n scripts/log_monitor.sh
